@@ -61,7 +61,7 @@ const corsOptions = {
   origin: ["http://localhost:3000", process.env.CLIENT_URL],
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"]
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept", "token"]
 };
 app.use(cors(corsOptions));
 app.use(express.static("public"));
