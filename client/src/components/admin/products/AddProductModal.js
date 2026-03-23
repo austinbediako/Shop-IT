@@ -153,6 +153,8 @@ const AddProductDetail = ({ categories }) => {
                   }
                   className="px-4 py-2 border focus:outline-none"
                   type="text"
+                  id="name"
+                  name="name"
                 />
               </div>
               <div className="w-1/2 flex flex-col space-y-1 space-x-1">
@@ -170,6 +172,7 @@ const AddProductDetail = ({ categories }) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="price"
+                  name="price"
                 />
               </div>
             </div>
@@ -209,6 +212,7 @@ const AddProductDetail = ({ categories }) => {
                 accept=".jpg, .jpeg, .png"
                 className="px-4 py-2 border focus:outline-none"
                 id="image"
+                name="image"
                 multiple
               />
             </div>
@@ -239,7 +243,7 @@ const AddProductDetail = ({ categories }) => {
                 </select>
               </div>
               <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="status">Product Category *</label>
+                <label htmlFor="category">Product Category *</label>
                 <select
                   value={fData.pCategory}
                   onChange={(e) =>
@@ -250,9 +254,9 @@ const AddProductDetail = ({ categories }) => {
                       pCategory: e.target.value,
                     })
                   }
-                  name="status"
+                  name="category"
                   className="px-4 py-2 border focus:outline-none"
-                  id="status"
+                  id="category"
                 >
                   <option disabled value="">
                     Select a category
@@ -285,6 +289,7 @@ const AddProductDetail = ({ categories }) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="quantity"
+                  name="quantity"
                 />
               </div>
               <div className="w-1/2 flex flex-col space-y-1">
@@ -302,6 +307,7 @@ const AddProductDetail = ({ categories }) => {
                   type="number"
                   className="px-4 py-2 border focus:outline-none"
                   id="offer"
+                  name="offer"
                 />
               </div>
             </div>

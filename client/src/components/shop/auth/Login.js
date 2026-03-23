@@ -81,6 +81,8 @@ const Login = ({ setAction }) => {
             value={data.email}
             type="email"
             id="email"
+            name="email"
+            autoComplete="email"
             required
             className="w-full px-4 py-3 text-gray-900 auth-input focus:outline-none placeholder-gray-400"
             placeholder="john@example.com"
@@ -100,6 +102,8 @@ const Login = ({ setAction }) => {
               value={data.password}
               type={showPassword ? "text" : "password"}
               id="password"
+              name="password"
+              autoComplete="current-password"
               required
               className="w-full px-4 py-3 text-gray-900 auth-input focus:outline-none placeholder-gray-400 pr-12"
               placeholder="••••••••"

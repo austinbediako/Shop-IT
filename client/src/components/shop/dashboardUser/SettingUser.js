@@ -60,6 +60,8 @@ const SettingComponent = () => {
                   value={fData.oldPassword}
                   type={fData.type}
                   id="oldPassword"
+                  name="oldPassword"
+                  autoComplete="current-password"
                   className="w-full pl-5 pr-12 py-4 text-gray-800 bg-gray-50 border-2 border-gray-200 rounded-none-none focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 font-medium"
                   placeholder="Enter current password"
                 />
@@ -92,6 +94,8 @@ const SettingComponent = () => {
                 value={fData.newPassword}
                 type={fData.type}
                 id="newPassword"
+                name="newPassword"
+                autoComplete="new-password"
                 className="w-full px-5 py-4 text-gray-800 bg-gray-50 border-2 border-gray-200 rounded-none-none focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 font-medium"
                 placeholder="Enter new password"
               />
@@ -106,6 +110,8 @@ const SettingComponent = () => {
                 value={fData.confirmPassword}
                 type={fData.type}
                 id="confirmPassword"
+                name="confirmPassword"
+                autoComplete="new-password"
                 className="w-full px-5 py-4 text-gray-800 bg-gray-50 border-2 border-gray-200 rounded-none-none focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 font-medium"
                 placeholder="Confirm new password"
               />

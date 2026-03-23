@@ -100,6 +100,7 @@ const ResetPasswordComponent = () => {
                   id="newPassword"
                   name="newPassword"
                   type={showPassword ? "text" : "password"}
+                  autoComplete="new-password"
                   required
                   value={data.newPassword}
                   onChange={(e) => setData({ ...data, newPassword: e.target.value, error: false })}
@@ -125,6 +126,7 @@ const ResetPasswordComponent = () => {
                   id="confirmPassword"
                   name="confirmPassword"
                   type={showConfirmPassword ? "text" : "password"}
+                  autoComplete="new-password"
                   required
                   value={data.confirmPassword}
                   onChange={(e) => setData({ ...data, confirmPassword: e.target.value, error: false })}

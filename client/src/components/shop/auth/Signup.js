@@ -115,6 +115,8 @@ const Signup = (props) => {
             value={data.name}
             type="text"
             id="name"
+            name="name"
+            autoComplete="name"
             required
             className={`w-full px-4 py-3 text-gray-900 auth-input focus:outline-none placeholder-gray-400 ${
               data.error?.name ? "border-red-500 focus:border-red-500 shadow-[0_0_0_1px_#ef4444]" : ""
@@ -140,6 +142,8 @@ const Signup = (props) => {
             value={data.email}
             type="email"
             id="email"
+            name="email"
+            autoComplete="email"
             required
             className={`w-full px-4 py-3 text-gray-900 auth-input focus:outline-none placeholder-gray-400 ${
               data.error?.email ? "border-red-500 focus:border-red-500 shadow-[0_0_0_1px_#ef4444]" : ""
@@ -167,6 +171,8 @@ const Signup = (props) => {
                 value={data.password}
                 type={showPassword ? "text" : "password"}
                 id="password"
+                name="password"
+                autoComplete="new-password"
                 required
                 className={`w-full px-4 py-3 text-gray-900 auth-input focus:outline-none placeholder-gray-400 pr-12 ${
                   data.error?.password ? "border-red-500 focus:border-red-500 shadow-[0_0_0_1px_#ef4444]" : ""
@@ -201,6 +207,8 @@ const Signup = (props) => {
                 value={data.cPassword}
                 type={showConfirmPassword ? "text" : "password"}
                 id="cPassword"
+                name="cPassword"
+                autoComplete="new-password"
                 required
                 className={`w-full px-4 py-3 text-gray-900 auth-input focus:outline-none placeholder-gray-400 pr-12 ${
                   data.error?.cPassword ? "border-red-500 focus:border-red-500 shadow-[0_0_0_1px_#ef4444]" : ""

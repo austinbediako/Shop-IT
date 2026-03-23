@@ -77,6 +77,8 @@ const ForgotPassword = ({ setAction }) => {
             value={data.email}
             type="email"
             id="email"
+            name="email"
+            autoComplete="email"
             required
             className="w-full px-4 py-3 text-gray-900 auth-typography-body auth-input focus:outline-none placeholder-gray-400"
             placeholder="john@example.com"

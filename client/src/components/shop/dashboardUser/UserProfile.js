@@ -83,6 +83,8 @@ const ProfileComponent = () => {
                 onChange={(e) => setFdata({ ...fData, name: e.target.value })}
                 type="text"
                 id="name"
+                name="name"
+                autoComplete="name"
                 className="w-full px-5 py-4 text-gray-800 bg-gray-50 border-2 border-gray-200 rounded-none focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 font-medium"
                 placeholder="Your full name"
               />
@@ -98,6 +100,8 @@ const ProfileComponent = () => {
                 readOnly
                 type="email"
                 id="email"
+                name="email"
+                autoComplete="email"
                 className="w-full px-5 py-4 text-gray-500 bg-gray-100 border-2 border-gray-200 rounded-none cursor-not-allowed font-medium"
                 placeholder="Email address"
               />
@@ -130,6 +134,8 @@ const ProfileComponent = () => {
                   onChange={(e) => setFdata({ ...fData, phoneNumber: e.target.value })}
                   type="tel"
                   id="phone"
+                  name="phone"
+                  autoComplete="tel"
                   className="flex-1 px-5 py-4 text-gray-800 bg-gray-50 border-2 border-gray-200 rounded-none focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 font-medium"
                   placeholder="Phone number"
                 />
