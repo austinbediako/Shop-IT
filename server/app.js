@@ -56,7 +56,14 @@ mongoose
 // Middleware
 app.use(morgan("dev"));
 app.use(cookieParser());
-app.use(cors());
+
+const corsOptions = {
+  origin: ["http://localhost:3000", process.env.CLIENT_URL],
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"]
+};
+app.use(cors(corsOptions));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
