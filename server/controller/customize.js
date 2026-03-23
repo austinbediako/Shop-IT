@@ -62,11 +62,31 @@ class Customize {
 
   async getAllData(req, res) {
     try {
+      const calculateGrowth = async (model) => {
+        const thirtyDaysAgo = new Date(new Date().setDate(new Date().getDate() - 30));
+        const sixtyDaysAgo = new Date(new Date().setDate(new Date().getDate() - 60));
+
+        const currentPeriodCount = await model.countDocuments({ createdAt: { $gte: thirtyDaysAgo } });
+        const previousPeriodCount = await model.countDocuments({ createdAt: { $gte: sixtyDaysAgo, $lt: thirtyDaysAgo } });
+
+        if (previousPeriodCount === 0) return currentPeriodCount > 0 ? 100 : 0;
+        return Math.round(((currentPeriodCount - previousPeriodCount) / previousPeriodCount) * 100);
+      };
+
       let Categories = await categoryModel.countDocuments({});
       let Products = await productModel.countDocuments({});
       let Orders = await orderModel.countDocuments({});
       let Users = await userModel.countDocuments({});
-      return res.json({ Categories, Products, Orders, Users });
+
+      let CategoriesGrowth = await calculateGrowth(categoryModel);
+      let ProductsGrowth = await calculateGrowth(productModel);
+      let OrdersGrowth = await calculateGrowth(orderModel);
+      let UsersGrowth = await calculateGrowth(userModel);
+
+      return res.json({ 
+        Categories, Products, Orders, Users,
+        CategoriesGrowth, ProductsGrowth, OrdersGrowth, UsersGrowth
+      });
     } catch (err) {
       console.log(err);
       return res.status(500).json({ error: "Internal Server Error" });
