@@ -58,7 +58,11 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: ["http://localhost:3000", process.env.CLIENT_URL],
+  origin: [
+    "http://localhost:3000",
+    "https://shop-it-e5sz.vercel.app",
+    process.env.CLIENT_URL
+  ],
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept", "token"]
