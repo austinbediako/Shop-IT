@@ -2,6 +2,10 @@
 
 A full-stack MERN e-commerce platform with a luxury editorial design, Paystack payment integration, and a full-featured admin dashboard.
 
+### 🌐 Live Demo
+- **Storefront (Vercel):** [https://shop-it-e5sz.vercel.app](https://shop-it-e5sz.vercel.app)
+- **Backend API (Render):** [https://shop-it-vgur.onrender.com](https://shop-it-vgur.onrender.com)
+
 ---
 
 ## ✨ Features
