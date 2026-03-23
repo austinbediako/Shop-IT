@@ -100,7 +100,7 @@ const TodayOrderTable = ({ order }) => {
               <img
                 key={index}
                 className="w-12 h-12 object-cover"
-                src={`${apiURL}/uploads/products/${item.id.pImages[0]}`}
+                src={item.id.pImages[0].match(/^https?:\/\//) ? item.id.pImages[0] : `${apiURL}/uploads/products/${item.id.pImages[0]}`}
                 alt="Pic"
               />
             );

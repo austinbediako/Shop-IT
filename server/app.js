@@ -68,7 +68,8 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept", "token"]
 };
 app.use(cors(corsOptions));
-app.use(express.static("public"));
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

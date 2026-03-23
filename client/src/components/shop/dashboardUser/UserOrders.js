@@ -31,7 +31,7 @@ const TableBody = ({ order }) => {
             <div className="flex items-center space-x-3" key={i}>
               <img
                 className="w-10 h-10 object-cover rounded-none-none border border-gray-200 shadow-sm"
-                src={`${apiURL}/uploads/products/${product.id.pImages[0]}`}
+                src={product.id.pImages[0].match(/^https?:\/\//) ? product.id.pImages[0] : `${apiURL}/uploads/products/${product.id.pImages[0]}`}
                 alt="product"
               />
               <span className="text-sm font-medium text-gray-800">{product.id.pName}</span>

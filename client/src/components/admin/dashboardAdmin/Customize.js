@@ -146,7 +146,7 @@ const AllImages = () => {
               <div key={index} className="relative col-span-1 m-2 border">
                 <img
                   className="w-full md:h-32 object-center object-cover"
-                  src={`${apiURL}/uploads/customize/${item.slideImage}`}
+                  src={item.slideImage.match(/^https?:\/\//) ? item.slideImage : `${apiURL}/uploads/customize/${item.slideImage}`}
                   alt="sliderImages"
                 />
                 <span

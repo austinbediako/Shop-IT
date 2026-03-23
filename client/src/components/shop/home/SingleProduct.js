@@ -31,7 +31,7 @@ const InlineCarousel = ({ images, offset = 0 }) => {
             idx === current ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            backgroundImage: `url(${apiURL}/uploads/customize/${item.slideImage})`,
+            backgroundImage: `url(${item.slideImage.match(/^https?:\/\//) ? item.slideImage : `${apiURL}/uploads/customize/${item.slideImage}`})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -115,7 +115,7 @@ const SingleProduct = (props) => {
                 <CardFlipFront className="rounded-xl overflow-hidden shadow-md">
                   <img
                     className="w-full h-full object-cover object-center cursor-pointer"
-                    src={`${apiURL}/uploads/products/${item.pImages[0]}`}
+                    src={item.pImages[0].match(/^https?:\/\//) ? item.pImages[0] : `${apiURL}/uploads/products/${item.pImages[0]}`}
                     alt="Product"
                   />
                 </CardFlipFront>

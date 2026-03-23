@@ -3,15 +3,9 @@ const router = express.Router();
 const customizeController = require("../controller/customize");
 const multer = require("multer");
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "public/uploads/customize");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "_" + file.originalname);
-  },
-});
+const { getCloudinaryStorage } = require("../config/cloudinary");
 
+const storage = getCloudinaryStorage("customize");
 const upload = multer({ storage: storage });
 
 router.get("/get-slide-image", customizeController.getImages);

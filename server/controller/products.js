@@ -73,7 +73,7 @@ class Product {
       try {
         let allImages = [];
         for (const img of images) {
-          allImages.push(img.filename);
+          allImages.push(img.path);
         }
         let newProduct = new productModel({
           pImages: allImages,
@@ -145,7 +145,7 @@ class Product {
       if (editImages.length == 2) {
         let allEditImages = [];
         for (const img of editImages) {
-          allEditImages.push(img.filename);
+          allEditImages.push(img.path);
         }
         editData = { ...editData, pImages: allEditImages };
         Product.deleteImages(pImages.split(","), "string");

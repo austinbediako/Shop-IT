@@ -16,7 +16,7 @@ class Category {
 
   async postAddCategory(req, res) {
     let { cName, cDescription, cStatus } = req.body;
-    let cImage = req.file.filename;
+    let cImage = req.file.path;
     const filePath = `../server/public/uploads/categories/${cImage}`;
 
     if (!cName || !cDescription || !cStatus || !cImage) {

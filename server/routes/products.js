@@ -3,15 +3,9 @@ const router = express.Router();
 const productController = require("../controller/products");
 const multer = require("multer");
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "public/uploads/products");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "_" + file.originalname);
-  },
-});
+const { getCloudinaryStorage } = require("../config/cloudinary");
 
+const storage = getCloudinaryStorage("products");
 const upload = multer({ storage: storage });
 
 router.get("/all-product", productController.getAllProduct);

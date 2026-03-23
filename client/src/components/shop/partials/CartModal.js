@@ -98,7 +98,7 @@ const CartModal = () => {
                       <div className="text-gray-900 flex space-x-4 my-6 items-center border-b border-gray-100 pb-4">
                         <img
                           className="w-20 h-20 object-cover object-center border border-gray-100 rounded"
-                          src={`${apiURL}/uploads/products/${item.pImages[0]}`}
+                          src={item.pImages[0].match(/^https?:\/\//) ? item.pImages[0] : `${apiURL}/uploads/products/${item.pImages[0]}`}
                           alt="cartProduct"
                         />
                         <div className="relative w-full flex flex-col">
