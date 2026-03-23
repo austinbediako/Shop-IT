@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import OrderSuccessMessage from "./OrderSuccessMessage";
 
-const apiURL = process.env.REACT_APP_API_URL;
-
 const Hero = () => {
 
   return (
