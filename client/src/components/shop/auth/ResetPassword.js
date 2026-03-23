@@ -4,6 +4,7 @@ import Layout from "../layout";
 import { useSnackbar } from "notistack";
 import { Eye, EyeOff } from "lucide-react";
 import "./AuthStyles.css";
+import { resetPasswordReq } from "./fetchApi";
 
 const ResetPasswordComponent = () => {
   const { token } = useParams();
