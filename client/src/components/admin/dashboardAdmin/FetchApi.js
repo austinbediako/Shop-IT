@@ -28,6 +28,7 @@ export const postUploadImage = async (formData) => {
     return res.data;
   } catch (error) {
     console.log(error);
+    return { error: "Server error or file too large" };
   }
 };
 

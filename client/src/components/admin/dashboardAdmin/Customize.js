@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { DashboardContext } from "./";
 import { uploadImage, sliderImages, deleteImage } from "./Action";
 
@@ -46,9 +46,15 @@ const Customize = () => {
 
 const UploadImageSection = () => {
   const { data, dispatch } = useContext(DashboardContext);
+  const [errorInfo, setErrorInfo] = useState(false);
 
-  const uploadImageHandler = (image) => {
-    uploadImage(image, dispatch);
+  const uploadImageHandler = async (image) => {
+    let res = await uploadImage(image, dispatch);
+    if (res && res.error) {
+       setErrorInfo("Upload failed. The image might be too large (over 10MB limit) or the server encountered an error. Please try again with a smaller file.");
+    } else {
+       setErrorInfo(false);
+    }
   };
 
   return (
@@ -57,6 +63,14 @@ const UploadImageSection = () => {
         <h1 className="border-b-2 border-yellow-700 mb-4 pb-2 text-2xl font-semibold">
           Shop Slider Images
         </h1>
+        {errorInfo && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <span className="block sm:inline">{errorInfo}</span>
+            <span onClick={() => setErrorInfo(false)} className="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer">
+              <svg className="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            </span>
+          </div>
+        )}
         <div className="relative flex flex-col space-y-2">
           <div
             style={{ background: "#303031" }}

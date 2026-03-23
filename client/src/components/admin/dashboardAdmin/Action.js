@@ -58,8 +58,16 @@ export const uploadImage = async (image, dispatch) => {
         dispatch({ type: "imageUpload", payload: false });
         sliderImages(dispatch);
       }, 1000);
+      return responseData;
+    } else if (responseData && responseData.error) {
+      setTimeout(function () {
+        dispatch({ type: "imageUpload", payload: false });
+      }, 500);
+      return responseData;
     }
   } catch (error) {
     console.log(error);
+    dispatch({ type: "imageUpload", payload: false });
+    return { error: "An unexpected error occurred" };
   }
 };
