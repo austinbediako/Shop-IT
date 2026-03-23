@@ -1,0 +1,17 @@
+node_modules/
+uploads/
+images/
+package-lock.json
+img/
+.gstack/
+
+# Security Envs
+.env
+.env.*
+!.env.example
+
+# Agent Skill Files
+.gemini/
+.agents/
+.agent/
+.claude/

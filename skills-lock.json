@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "ecommerce-platform-specialist": {
+      "source": "qodex-ai/ai-agent-skills",
+      "sourceType": "github",
+      "computedHash": "8cfec71d6b906caf5c43e63040212237edc458937b733207a0e18e7a858a09a6"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+    },
+    "mongodb": {
+      "source": "hoodini/ai-agents-skills",
+      "sourceType": "github",
+      "computedHash": "9b169b7c9de672fb8646c8c0c91865bc2dff3d5739b2d864bd039f12cf5dc800"
+    },
+    "penpot-uiux-design": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "computedHash": "cd29e08bb7d2d4b9212582bcd9b70823619fbc6397078b8ba853962054ba4230"
+    }
+  }
+}

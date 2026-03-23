@@ -1,0 +1,37 @@
+{
+  "name": "shop-it",
+  "version": "1.0.0",
+  "description": "A E-commerce website.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon --ignore public/ app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kaeytee/mern-Ecommerce2"
+  },
+  "author": "Austin | https://my-project1-indol.vercel.app/",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaeytee/mern-Ecommerce2/issues"
+  },
+  "homepage": "https://github.com/Kaeytee/mern-Ecommerce2#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "i": "^0.3.6",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^5.9.27",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemailer": "^8.0.3",
+    "npm": "^6.14.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
