@@ -62,15 +62,14 @@ class Customize {
 
   async getAllData(req, res) {
     try {
-      let Categories = await categoryModel.find({}).count();
-      let Products = await productModel.find({}).count();
-      let Orders = await orderModel.find({}).count();
-      let Users = await userModel.find({}).count();
-      if (Categories && Products && Orders) {
-        return res.json({ Categories, Products, Orders, Users });
-      }
+      let Categories = await categoryModel.countDocuments({});
+      let Products = await productModel.countDocuments({});
+      let Orders = await orderModel.countDocuments({});
+      let Users = await userModel.countDocuments({});
+      return res.json({ Categories, Products, Orders, Users });
     } catch (err) {
       console.log(err);
+      return res.status(500).json({ error: "Internal Server Error" });
     }
   }
 }
